@@ -39,7 +39,7 @@ def main():
         'exit', 'good bye', 'close', 'q'
     ]
 
-    print("\n{:_^50}\n|".format('CACTUS'))
+    print("\n{:_^50}\n|".format('CAMMMARO'))
     process = True
     while process:
         sentence = input("|-- ").lower().strip()
