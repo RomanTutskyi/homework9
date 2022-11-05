@@ -1,10 +1,3 @@
-comands = {'add': 'add_contact' , 'change':'change', 'phone':'phone'}
-break_comands = ['quit' , 'break' , 'stop' ,'exit', 'close' , 'q' , 'good bye'
-]
-
-
-
-
 
 def input_error(func):
     def wrapper(a):
@@ -35,6 +28,18 @@ def phone(string):
 
 
 def main():
+    commands = {
+        'add': add_contact,
+        'change': change,
+        'phone': phone,
+    }
+
+    break_commands = [
+        'break', 'quit', 'stop',
+        'exit', 'good bye', 'close', 'q'
+    ]
+
+    print("\n{:_^50}\n|".format('CACTUS'))
     process = True
     while process:
         sentence = input("|-- ").lower().strip()
@@ -42,22 +47,22 @@ def main():
 
         if sentence == "":
             continue
-        elif sentence in break_comands:
-            print('Goog bye')
+        elif sentence in break_commands:
+            print('| Goog bye')
             process = False
 
         elif sentence == "hello":
-            print(" How can i help u?")
+            print("| How can i help u?")
 
         elif sentence == "show all":
             for i in contact:
                 print(i, contact[i])
 
-        elif command[0] in comands:
-            comands[command[0]](command[1:])
+        elif command[0] in commands:
+            commands[command[0]](command[1:])
 
         else:
-            print("Sry , but i don't understand , pls try it again")
+            print("Sry , but i dont understand Pls try again")
 
 if __name__ == "__main__":
     contact = {
